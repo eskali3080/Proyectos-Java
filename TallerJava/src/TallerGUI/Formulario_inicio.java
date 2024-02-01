@@ -16,6 +16,9 @@ import TallerGUI.Formulario_ejercicio9;
 import TallerGUI.Formulario_ejercicio10;
 import TallerGUI.Formulario_ejercicio11;
 import TallerGUI.Formulario_ejercicio12;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
@@ -27,6 +30,7 @@ public class Formulario_inicio extends javax.swing.JFrame {
      * Creates new form Interfaz_de_inicio
      */
     public Formulario_inicio() {
+        this.setContentPane(new ImagenFondo());
         initComponents();
       
     }
@@ -361,5 +365,16 @@ public class Formulario_inicio extends javax.swing.JFrame {
 
     private void setLocationRealtiveTo(Object object) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public class ImagenFondo extends JPanel{
+        public void paint(Graphics g) {
+            ImageIcon imagen = new ImageIcon(getClass().getResource("/IMG/montaña.jpg"));
+            g.drawImage(imagen.getImage(), 0, 0, getWidth(), getHeight(), this);
+
+            setOpaque(false);
+            super.paint(g);
+        }
+        
     }
 }
